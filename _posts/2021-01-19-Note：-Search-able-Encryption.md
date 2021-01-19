@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Test Article
-summary: Some tests, and some Tips.
+title: Note-Searchable Encryption
+summary: Notes for Graduation Project, Part of Searchable Encryption.
 featured-img: bridge_golden_gate_5639x3561
 ---
 ## Background Information

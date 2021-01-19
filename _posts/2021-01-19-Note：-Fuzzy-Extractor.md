@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Note: Fuzzy Extractor
-summary: Notes for Graduation Project.
+title: Note-Fuzzy Extractor
+summary: Notes for Graduation Project. Part of Fuzzy Extractor.
 featured-img: 836926
 ---
 ## Background
