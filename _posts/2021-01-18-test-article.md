@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Test Article
+summary: Some tests, and some Tips.
 featured-img: 421295
 ---
 ## Getting Started
@@ -33,5 +34,5 @@ featured-img: 421295
 ---
 ```
 Featured-img should be saved in `./assets/img/posts`, named as `421295_thumb.jpg`.
-
+And `421295.jpg` is also needed for the head pic.
 Then just use pic bed and get started.
