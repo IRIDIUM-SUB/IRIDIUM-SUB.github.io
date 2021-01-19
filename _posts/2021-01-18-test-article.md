@@ -24,3 +24,14 @@ if __name__=="__main__":
 ## Pics
 ![Test1](https://raw.githubusercontent.com/IRIDIUM-SUB/Picture-bed/main/img/421295.jpg)
 ![Test2](https://raw.githubusercontent.com/IRIDIUM-SUB/Picture-bed/main/img/city-7680x4320-light-night-river-4k-8k-18452.jpg)
+## What to do before Posting an article
+```
+---
+layout: post
+title: Test Article
+featured-img: 421295
+---
+```
+Featured-img should be saved in `./assets/img/posts`, named as `421295_thumb.jpg`.
+
+Then just use pic bed and get started.
