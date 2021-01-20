@@ -19,7 +19,7 @@ SE 提供的加密和密文直接检索功能使服务器无法窃听用户个�
 3. 检索：云端运行检索算法
 4. 返回查询结果，即加密的目标文件。
 
-![image-20210116164042792](Note%EF%BC%9A%20Search-able%20Encryption.assets/image-20210116164042792.png)
+![](https://raw.githubusercontent.com/IRIDIUM-SUB/Picture-bed/main/img/image-20210116164042792.png)
 
 ## Related Research
 
@@ -43,8 +43,7 @@ Request: Bob 通过不可信赖邮件服务器向 Alice 发送包含某些关键
 3. 单服务器一对多用户模型：一个上传者，多个接收者。和上一个不同点在于广播共享机制。
 
 4. 多对多单服务器模型：任意用户都可以成为发送或接收者，但只有合法用户可以检索，同时服务器不能获得明文信息。
-
-   ![image-20210116182912688](Note%EF%BC%9A%20Search-able%20Encryption.assets/image-20210116182912688.png)
+[![sRw1dU.png](https://s3.ax1x.com/2021/01/20/sRw1dU.png)](https://imgchr.com/i/sRw1dU)
 
 ## Strategies
 
