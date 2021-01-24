@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fuzzy Extractors：How to generate strong keys from Bio materials
+title: Fuzzy Extractors-How to generate strong keys from Bio materials
 summary: Notes for Graduation Project, about how to generate error tolerated keys via bio meterials.
 featured-img: takashi-watanabe-f2DL8oI-7N8-unsplash
 ---
