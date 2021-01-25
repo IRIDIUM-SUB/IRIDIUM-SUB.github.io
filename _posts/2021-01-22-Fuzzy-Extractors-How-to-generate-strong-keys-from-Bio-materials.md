@@ -129,3 +129,19 @@ w'和w对称差的大小，数学上，两个集合的对称差是**只属于其
 
 生物统计学的容错方法（？）
 
+> Juels and Sudan [16] provided the first construction for a metric other than Hamming: they construct a “fuzzy vault” scheme for the set difference metric. The main difference is that [16] lacks a cryptographically strong definition of the object constructed. In particular, their construction leaks a significant amount of information about their analog of R, even though it leaves the adversary with provably “many valid choices” for R. In retrospect, their notion can be viewed as an (information-theoretically) one-way function, rather than a semantically-secure key encapsulation mechanism, like the one considered in this work. Nonetheless, their informal notion is very closely related to our secure sketches, and we improve their construction in Section 5.
+> Juels和Sudan[16]提供了除Hamming之外的第一个度量结构:他们为集差度量构造了一个“模糊拱顶”方案。主要的区别是[16]缺少构造的对象的加密强定义。特别是建设泄漏大量的信息的模拟R,尽管它给敌人留下证明地“许多有效的选择”R .回想起来,他们的概念可以被视为一个(information-theoretically)单向函数,而不是一个安全语义的关键封装机制,如考虑这项工作。尽管如此，它们非正式的概念与我们的安全草图非常相关，我们将在第5节改进它们的构造。
+
+> Linnartz and Tuyls [18] define and construct a primitive very similar to a fuzzy extractor (that line of work was continued in [28].) The definition of [18] focuses on the continuous space Rn, and assumes a particular input distribution (typically a known, multivariate Gaussian). Thus, our definition of a fuzzy extractor can be viewed as a generalization of the notion of a “shielding function” from [18]. However, our constructions focus on discrete metric spaces. 
+> Linnartz和Tuyls[18]定义和构造了一个非常类似于模糊提取器的原语([28]继续了这一行的工作)。[18]的定义关注于连续空间Rn，并假设一个特定的输入分布(通常是已知的多元高斯分布)。因此，我们对模糊提取器的定义可以看作是对[18]的“屏蔽函数”概念的概括。然而，我们的构造集中在离散度量空间上。
+
+> Work on privacy amplification [3,4], as well as work on de-randomization and hardness amplification [14,24], also addressed the need to extract uniform randomness from a random variable about which some information has been leaked. A major focus of research in that literature has been the development of (ordinary, not fuzzy) extractors with short seeds (see [26] for a survey). We use extractors in this work (though for our purposes, pairwise independent hashing [3,14] is sufficient). Conversely, our work has been applied recently to privacy amplification: Ding [9] uses fuzzy extractors for noise tolerance in Maurer’s bounded storage model.
+> 关于隐私放大的研究[3,4]，以及去随机化和硬度放大的研究[14,24]，也讨论了从一些信息已经泄露的随机变量中提取均匀随机性的必要性。该文献研究的一个主要焦点是(普通的，不是模糊的)短种子提取器的发展(见[26]调查)。我们在这项工作中使用提取器(尽管对于我们的目的来说，两两独立的散列[3,14]就足够了)。相反，我们的工作最近被应用于隐私放大:Ding[9]在Maurer的有界存储模型中使用模糊提取器来容忍噪声。
+
+## Extensions
+
+> We can relax the error correction properties of sketches and fuzzy extractors to allow list decoding: instead of outputting one correct secret, we can output a short list of secrets, one of which is correct. For many applications (e.g., password authentication), this is sufficient, while the advantage is that we can possibly tolerate many more errors in the password. Not surprisingly, by using list-decodable codes (see [13] and the references therein) in our constructions, we can achieve this relaxation and considerably improve our error tolerance. Other similar extensions would be to allow small error probability in error-correction, to ensure correction of only average-case errors, or to consider nonbinary alphabets. Again, many of our results will extend to these settings. Finally, an interesting new direction is to consider other metrics not considered in this work.
+
+> 我们可以放松草图和模糊提取器的纠错特性来允许列表解码:我们可以输出一个简短的秘密列表，而不是输出一个正确的秘密，其中一个是正确的。对于许多应用程序(例如，密码身份验证)，这就足够了，而优点是我们可以容忍更多的密码错误。毫不奇怪，通过在我们的结构中使用列表可解码代码(参见[13]和其中的引用)，我们可以实现这种放松，并大大提高我们的容错能力。其他类似的扩展是允许在错误纠正中出现小的错误概率，以确保只纠正平均大小写错误，或者考虑非二进制字母。同样，我们的许多结果将扩展到这些设置。最后，一个有趣的新方向是考虑本工作中未考虑的其他指标。
+
+TBD。。。
