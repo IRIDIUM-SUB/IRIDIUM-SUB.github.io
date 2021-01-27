@@ -29,26 +29,45 @@ Song 等人于 2000 年提出了第一个实用的可搜索加密方案 SWP。�
 3. 检索的时候检索密文的哈希，匹配则返回
 
 ### 实现细节
+#### Preparation
+- 用户有随机密钥k',k''
+- 还需要一个Seed用于产生随机流S。
+- f(x,k),F(x,k)分别为两种键控哈希函数。
+- 用户有文件C，分为每个定长词w
 
 #### 创建密文
+对于每个分词W：
+1. 使用密钥k''和对称加密算法加密w->X
+2. 分成L,R两个部分
+3. 使用Seed生成随机流S(这里应该是每个文件生成一个),这里使用的是Si
+4. 生成密钥:ki=f(L,k')
+5. Y=(Si,F(Si,ki))
+6. C=Xi XOR Yi
+7. Ci作为该单词的密文发送给服务器
+#### 搜索:本地部分(创建陷门)
+1. 使用密钥k''和对称加密算法加密关键词w->X
+2. X=<L,R>
+3. k=f(L,k')
+4. Send(X,k)
+#### 搜索:服务器部分(检索)
+对于每个文件C的每个词W:
+1. (S,P)=W XOR X
+2. 检验P,如果:
+    1. P=F(S,k),则匹配,返回文件内容(?)C和关键词位置index
+    2. 如果不匹配,检查下一个
+3. Failed
+#### 解密
+对每一个密文:
+1. C=<Cl,Cr>
+2. 找到对应的Seed,生成加密时一样的随机流Si
+3. Xl=Cl XOR Si
+4. K=f(Xl,k')
+4. Tp=(Si,F(Si,K))
+5. Xp=Cp XOR Tp
+6. Wp=Decrypt(Xp),这里是之前的对称算法的解密操作,使用k''作为密钥.
 
-1. 分词
-2. 使用确定加密算法加密
-3. 加密的单词分成两部分<L,R>
-4. 生成**伪随机值**（要素察觉）
-5. 伪随机函数计算密钥k=f(L)
-6. 使用键控哈希对随机值进行哈希，密钥（或称键控参数）为上面生成的k
-7. 得到Y=<S,F(S)>
-8. Y和加密后的X亦或（Embed）
-
-![https://pic1.zhimg.com/80/v2-2b624b795f6e6214c39a9ec76b28b2b4_720w.jpg](Practical%20techniques%20for%20searches%20on%20encrypted%20data.assets/v2-2b624b795f6e6214c39a9ec76b28b2b4_720w.jpg)
-
-#### 生成陷门
-
-顺序查询，如果对于最终密文C，有C XOR X 的结果为<s,F(s)>，则找到关键字。
-
-![](Practical%20techniques%20for%20searches%20on%20encrypted%20data.assets/v2-23fde4dbe622b6cae18d25494a44310a_720w.jpg)
-
+### Flow chart
+[![szsn5n.png](https://s3.ax1x.com/2021/01/27/szsn5n.png)](https://imgchr.com/i/szsn5n)
 ## Effectiveness Analysis
 
 搜索时线性遍历，每个词需要XOR和伪随机函数各一个。
